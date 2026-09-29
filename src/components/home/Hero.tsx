@@ -12,26 +12,26 @@ export function Hero() {
   const { hero } = dictionary;
 
   return (
-    <section className="container-site relative overflow-hidden pb-16 pt-16 md:pt-24">
+    <section className="container-site relative overflow-hidden pb-20 pt-16 md:pt-24">
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full bg-olive/[0.14] blur-3xl"
-        animate={{ x: [0, 24, -12, 0], y: [0, -18, 14, 0] }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+        className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-olive/[0.16] blur-[120px]"
+        animate={{ scale: [1, 1.08, 0.98, 1], opacity: [0.7, 1, 0.85, 0.7] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="relative flex max-w-2xl flex-col items-start gap-6"
+        className="relative mx-auto flex max-w-4xl flex-col items-center gap-7 text-center"
         variants={cascade()}
         initial="hidden"
         animate="show"
       >
         <motion.div variants={cascadeItem}>
-          <SectionLabel>{hero.eyebrow}</SectionLabel>
+          <SectionLabel center>{hero.eyebrow}</SectionLabel>
         </motion.div>
 
         <motion.h1
           variants={cascadeItem}
-          className="text-[44px] font-semibold leading-[1.02] tracking-[-0.02em] text-text md:text-[64px] lg:text-[72px]"
+          className="text-[44px] font-semibold leading-[1.03] tracking-[-0.025em] text-text sm:text-[56px] md:text-[72px] lg:text-[88px] xl:text-[96px]"
         >
           {hero.headlinePrefix}{" "}
           <span className="text-sand">{hero.headlineAccent}</span>
