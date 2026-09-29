@@ -29,11 +29,6 @@ export const solutions: SolutionsSectionContent = {
   viewFullService: "See the full service",
   repeatAnimation: "Replay",
   tabs: [
-    { id: "vender", tabLabel: "Sell", serviceSlug: "pagina-ventas-reservas" },
-    { id: "tienda", tabLabel: "Store", serviceSlug: "tienda-catalogo" },
-    { id: "amazon", tabLabel: "Amazon", serviceSlug: "amazon-tiendas" },
-    { id: "controlar", tabLabel: "Control", serviceSlug: "sistema-administrativo" },
-    { id: "crear", tabLabel: "Build", serviceSlug: "plataformas-medida" },
     {
       id: "marca-contenido",
       tabLabel: "Brand & content",
@@ -44,5 +39,14 @@ export const solutions: SolutionsSectionContent = {
       tabLabel: "Guidance",
       serviceSlug: "asesoria-mentoria",
     },
+    { id: "amazon", tabLabel: "Amazon", serviceSlug: "amazon-tiendas" },
+    { id: "vender", tabLabel: "Sell", serviceSlug: "pagina-ventas-reservas" },
+    { id: "tienda", tabLabel: "Store", serviceSlug: "tienda-catalogo" },
+    {
+      id: "controlar",
+      tabLabel: "Custom Systems",
+      serviceSlug: "sistema-administrativo",
+    },
+    { id: "crear", tabLabel: "Digital Strategy", serviceSlug: "plataformas-medida" },
   ],
 };
