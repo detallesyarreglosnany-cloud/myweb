@@ -9,7 +9,7 @@ export const hero: HeroContent = {
   headlinePrefix: "Tienes la idea. Nosotros la convertimos en",
   headlineAccent: "un negocio que vende.",
   support:
-    "Desarrollamos tu idea de negocio y digitalizamos tu marca: páginas de ventas, tiendas, sistemas administrativos y plataformas a la medida de tus necesidades, porque entendemos que tu negocio es diferente. Precio claro, entrega en 7 días, guías y soporte incluidos, y el código siempre es tuyo.",
+    "Desarrollamos tu idea de negocio y digitalizamos tu marca: páginas de ventas, tiendas, sistemas administrativos y plataformas a la medida de tus necesidades, porque entendemos que tu negocio es diferente. Precio claro, entrega en 7 días, guías y soporte incluidos.",
   primaryCta: { label: "Cuéntame tu idea", href: "#contacto" },
   secondaryCta: { label: "Ver soluciones", href: "#soluciones" },
   trustBadge: "Clientes en Colombia, Venezuela, Perú, México y EEUU",

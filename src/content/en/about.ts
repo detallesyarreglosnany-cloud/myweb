@@ -6,12 +6,11 @@ export const about: AboutContent = {
   body: [
     "AI systems builder and SaaS founder, with more than 6 years building digital infrastructure for businesses in Colombia, Venezuela, Peru, Mexico, and the United States.",
     "I don't just write code: I operate my own SaaS, Cleaning Angels, so I know exactly what it takes to keep a system alive after launch.",
-    "Today I bring that same experience to sales pages, stores, admin systems, and custom platforms: clear pricing, real delivery, and the code is always yours.",
+    "Today I bring that same experience to sales pages, stores, admin systems, and custom platforms: clear pricing and real delivery.",
   ],
   highlights: [
     { value: "6+", label: "Years building digital systems" },
     { value: "50+", label: "Systems shipped" },
-    { value: "100%", label: "The code is always yours" },
     { value: "5 countries", label: "Colombia, Venezuela, Peru, Mexico, and the US" },
   ],
   photoAlt: "Daniela Silva, digital strategist",

@@ -9,7 +9,7 @@ export const hero: HeroContent = {
   headlinePrefix: "You have the idea. We turn it into",
   headlineAccent: "a business that sells.",
   support:
-    "We develop your business idea and digitize your brand: sales pages, stores, admin systems, and custom platforms built around your needs, because we understand your business is different. Clear pricing, delivery in 7 days, guides and support included, and the code is always yours.",
+    "We develop your business idea and digitize your brand: sales pages, stores, admin systems, and custom platforms built around your needs, because we understand your business is different. Clear pricing, delivery in 7 days, guides and support included.",
   primaryCta: { label: "Tell me your idea", href: "#contacto" },
   secondaryCta: { label: "See solutions", href: "#soluciones" },
   trustBadge: "Clients in Colombia, Venezuela, Peru, Mexico, and the US",

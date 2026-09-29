@@ -70,7 +70,7 @@ export function AboutMe() {
 
           <motion.div
             variants={cascadeItem}
-            className="grid grid-cols-2 gap-4 border-t border-line pt-6 sm:grid-cols-4"
+            className="grid grid-cols-1 gap-4 border-t border-line pt-6 sm:grid-cols-3"
           >
             {about.highlights.map((item) => (
               <div key={item.label} className="flex flex-col gap-1">
