@@ -95,6 +95,33 @@ export interface SolutionsSectionContent {
   repeatAnimation: string;
 }
 
+export interface AboutHighlight {
+  label: string;
+  value: string;
+}
+
+export interface AboutContent {
+  eyebrow: string;
+  title: string;
+  body: string[];
+  highlights: AboutHighlight[];
+  photoAlt: string;
+}
+
+export interface FlagshipStat {
+  value: string;
+  label: string;
+}
+
+export interface FlagshipProjectContent {
+  eyebrow: string;
+  title: string;
+  description: string;
+  stats: FlagshipStat[];
+  linkLabel: string;
+  linkHref: string;
+}
+
 export interface FooterColumn {
   title: string;
   links: NavLink[];

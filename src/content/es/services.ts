@@ -164,6 +164,26 @@ export const services: Service[] = [
           "21 días de soporte incluido",
         ],
       },
+      {
+        name: "Revenue Autopilot",
+        price: "Desde $4,900",
+        includes: [
+          "Plataforma de reservas con precios dinámicos",
+          "Pagos en línea y facturación",
+          "Portal de clientes",
+          "Agente de IA en WhatsApp incluido",
+        ],
+      },
+      {
+        name: "SaaS White Label",
+        price: "Desde $4,900",
+        includes: [
+          "Arquitectura multitenant",
+          "Tu marca y tus precios, para revender a tus clientes",
+          "Cobros con Stripe Connect",
+          "Panel de administración propio",
+        ],
+      },
     ],
   },
   {
