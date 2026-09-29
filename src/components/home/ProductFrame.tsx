@@ -22,7 +22,13 @@ export function ProductFrame() {
           <span className="h-2 w-2 rounded-full bg-line-strong" />
           <span className="h-2 w-2 rounded-full bg-line-strong" />
         </div>
-        <div className="flex min-h-[280px] flex-col items-center justify-center gap-2 px-6 py-16 text-center md:min-h-[420px]">
+        <div className="relative flex min-h-[280px] flex-col items-center justify-center gap-2 overflow-hidden px-6 py-16 text-center md:min-h-[420px]">
+          <motion.span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 w-24 bg-gradient-to-r from-transparent via-sand/[0.06] to-transparent"
+            animate={{ x: ["-10%", "110%"] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+          />
           <span className="text-[13px] font-medium uppercase tracking-[0.06em] text-sand">
             {productFrame.eyebrow}
           </span>

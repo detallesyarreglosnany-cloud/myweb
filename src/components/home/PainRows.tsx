@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
-import { fadeUp } from "@/lib/motion";
+import { fadeUp, cascade, cascadeItem } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { selectSolutionTab } from "@/lib/solution-select";
 
@@ -26,9 +26,19 @@ export function PainRows() {
         </h2>
       </motion.div>
 
-      <ul className="mt-10 flex flex-col">
+      <motion.ul
+        className="mt-10 flex flex-col"
+        variants={cascade(0.08)}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-80px" }}
+      >
         {pains.items.map((pain) => (
-          <li key={pain.id} className="border-b border-line first:border-t">
+          <motion.li
+            key={pain.id}
+            variants={cascadeItem}
+            className="border-b border-line first:border-t"
+          >
             <Link
               href="#soluciones"
               onClick={() => selectSolutionTab(pain.solutionSlug)}
@@ -46,9 +56,9 @@ export function PainRows() {
                 →
               </span>
             </Link>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </section>
   );
 }
