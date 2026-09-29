@@ -164,6 +164,25 @@ export const services: Service[] = [
           "21 days of support included",
         ],
       },
+    ],
+  },
+  {
+    slug: "revenue-autopilot",
+    category: "crear",
+    name: "Revenue Autopilot",
+    headline: "Your entire operation, automated.",
+    support:
+      "The booking, payment, and support platform that works for you while you sleep.",
+    ctaLabel: "I want the full platform",
+    benefits: [
+      "Booking platform with dynamic pricing",
+      "Online payments and invoicing",
+      "Client portal",
+      "WhatsApp AI agent included",
+    ],
+    fromPrice: "From $4,900",
+    badge: "Best ROI",
+    levels: [
       {
         name: "Revenue Autopilot",
         price: "From $4,900",
@@ -174,6 +193,24 @@ export const services: Service[] = [
           "WhatsApp AI agent included",
         ],
       },
+    ],
+  },
+  {
+    slug: "saas-white-label",
+    category: "crear",
+    name: "SaaS White Label",
+    headline: "Multitenant. Resell to your own clients.",
+    support:
+      "The same platform we run for Cleaning Angels, with your brand and your pricing.",
+    ctaLabel: "Become a SaaS provider",
+    benefits: [
+      "Multitenant architecture",
+      "Your brand and your pricing, resold to your own clients",
+      "Payments with Stripe Connect",
+      "Your own admin panel",
+    ],
+    fromPrice: "From $4,900",
+    levels: [
       {
         name: "SaaS White Label",
         price: "From $4,900",

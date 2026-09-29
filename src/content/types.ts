@@ -79,6 +79,7 @@ export interface Service {
   benefits: string[];
   fromPrice: string;
   levels: ServiceLevel[];
+  badge?: string;
 }
 
 export interface SolutionTab {
@@ -93,6 +94,9 @@ export interface SolutionsSectionContent {
   tabs: SolutionTab[];
   viewFullService: string;
   repeatAnimation: string;
+  showPriceLabel: string;
+  hidePriceLabel: string;
+  allFilterLabel: string;
 }
 
 export interface AboutHighlight {
@@ -120,6 +124,21 @@ export interface FlagshipProjectContent {
   stats: FlagshipStat[];
   linkLabel: string;
   linkHref: string;
+}
+
+export interface Testimonial {
+  name: string;
+  country: string;
+  flag: string;
+  quote: string;
+  service: string;
+  avatar: string;
+}
+
+export interface TestimonialsContent {
+  eyebrow: string;
+  title: string;
+  items: Testimonial[];
 }
 
 export interface FooterColumn {

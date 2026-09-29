@@ -164,6 +164,25 @@ export const services: Service[] = [
           "21 días de soporte incluido",
         ],
       },
+    ],
+  },
+  {
+    slug: "revenue-autopilot",
+    category: "crear",
+    name: "Revenue Autopilot",
+    headline: "Toda tu operación, automatizada.",
+    support:
+      "La plataforma de reservas, pagos y atención que trabaja por ti mientras duermes.",
+    ctaLabel: "Quiero la plataforma completa",
+    benefits: [
+      "Plataforma de reservas con precios dinámicos",
+      "Pagos en línea y facturación",
+      "Portal de clientes",
+      "Agente de IA en WhatsApp incluido",
+    ],
+    fromPrice: "Desde $4,900",
+    badge: "Mejor retorno",
+    levels: [
       {
         name: "Revenue Autopilot",
         price: "Desde $4,900",
@@ -174,6 +193,24 @@ export const services: Service[] = [
           "Agente de IA en WhatsApp incluido",
         ],
       },
+    ],
+  },
+  {
+    slug: "saas-white-label",
+    category: "crear",
+    name: "SaaS White Label",
+    headline: "Multitenant. Revende a tus propios clientes.",
+    support:
+      "La misma plataforma que usamos en Cleaning Angels, con tu marca y tus precios.",
+    ctaLabel: "Convertirme en proveedor SaaS",
+    benefits: [
+      "Arquitectura multitenant",
+      "Tu marca y tus precios, para revender a tus clientes",
+      "Cobros con Stripe Connect",
+      "Panel de administración propio",
+    ],
+    fromPrice: "Desde $4,900",
+    levels: [
       {
         name: "SaaS White Label",
         price: "Desde $4,900",

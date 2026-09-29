@@ -1,8 +1,9 @@
 import { Hero } from "@/components/home/Hero";
 import { ProductFrame } from "@/components/home/ProductFrame";
 import { PainRows } from "@/components/home/PainRows";
-import { SolutionsTabs } from "@/components/home/SolutionsTabs";
+import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { FlagshipProject } from "@/components/home/FlagshipProject";
+import { Testimonials } from "@/components/home/Testimonials";
 import { AboutMe } from "@/components/home/AboutMe";
 
 export default function HomePage() {
@@ -11,8 +12,9 @@ export default function HomePage() {
       <Hero />
       <ProductFrame />
       <PainRows />
-      <SolutionsTabs />
+      <ServicesGrid />
       <FlagshipProject />
+      <Testimonials />
       <AboutMe />
     </>
   );

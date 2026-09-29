@@ -9,7 +9,7 @@ export const hero: HeroContent = {
   headlinePrefix: "Tienes la idea. Nosotros la convertimos en",
   headlineAccent: "un negocio que vende.",
   support:
-    "Diseñamos páginas de ventas, tiendas, sistemas y plataformas a tu medida. Te lo entregamos instalado y con todos los derechos.",
+    "Desarrollamos tu idea de negocio y digitalizamos tu marca: páginas de ventas, tiendas, sistemas administrativos y plataformas a la medida de tus necesidades, porque entendemos que tu negocio es diferente. Precio claro, entrega en 7 días, guías y soporte incluidos, y el código siempre es tuyo.",
   primaryCta: { label: "Cuéntame tu idea", href: "#contacto" },
   secondaryCta: { label: "Ver soluciones", href: "#soluciones" },
   trustBadge: "Clientes en Colombia, Venezuela, Perú, México y EEUU",
@@ -28,6 +28,9 @@ export const solutions: SolutionsSectionContent = {
   title: "Una solución para cada parte de tu negocio",
   viewFullService: "Ver el servicio completo",
   repeatAnimation: "Repetir",
+  showPriceLabel: "Ver precio",
+  hidePriceLabel: "Ocultar precio",
+  allFilterLabel: "Todos",
   tabs: [
     {
       id: "marca-contenido",
