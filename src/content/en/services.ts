@@ -14,11 +14,11 @@ export const services: Service[] = [
       "Instant quote tool and live chat included",
       "Synced calendar with automatic WhatsApp reminders",
     ],
-    fromPrice: "From $99",
+    fromPrice: "From $199",
     levels: [
       {
         name: "Starter",
-        price: "$99",
+        price: "$199",
         includes: [
           "High conversion landing",
           "Payment or deposit booking button",
@@ -28,7 +28,7 @@ export const services: Service[] = [
       },
       {
         name: "Pro",
-        price: "$180",
+        price: "$280",
         includes: [
           "Everything in Starter",
           "Funnel with event tracking and remarketing",
@@ -38,7 +38,7 @@ export const services: Service[] = [
       },
       {
         name: "Premium",
-        price: "$290",
+        price: "$390",
         includes: [
           "Everything in Pro",
           "Customer accounts",
@@ -61,11 +61,11 @@ export const services: Service[] = [
       "Direct purchase via WhatsApp or payment gateway",
       "Instant quote tool and cart recovery from Pro onward",
     ],
-    fromPrice: "From $150",
+    fromPrice: "From $290",
     levels: [
       {
         name: "Starter",
-        price: "$150",
+        price: "$290",
         includes: [
           "Visual, interactive presentation",
           "Direct purchase via WhatsApp or payment gateway",
@@ -75,7 +75,7 @@ export const services: Service[] = [
       },
       {
         name: "Pro",
-        price: "$250",
+        price: "$390",
         includes: [
           "Everything in Starter",
           "Quote tool and cart recovery by email or WhatsApp",
@@ -85,7 +85,7 @@ export const services: Service[] = [
       },
       {
         name: "Premium",
-        price: "$400",
+        price: "$540",
         includes: [
           "Everything in Pro",
           "Installable mobile app (PWA)",
@@ -179,11 +179,11 @@ export const services: Service[] = [
       "Optimized listings with keywords",
       "A+ Content, initial campaigns, and first month report in Premium",
     ],
-    fromPrice: "From $70",
+    fromPrice: "From $150",
     levels: [
       {
         name: "Starter, Launch",
-        price: "$70",
+        price: "$150",
         includes: [
           "Seller account and verification",
           "Payment method",
@@ -192,7 +192,7 @@ export const services: Service[] = [
       },
       {
         name: "Pro, Listings",
-        price: "$190",
+        price: "$270",
         includes: [
           "Everything in Starter",
           "5 optimized listings",
@@ -201,7 +201,7 @@ export const services: Service[] = [
       },
       {
         name: "Premium, Sales",
-        price: "$360",
+        price: "$440",
         includes: [
           "Everything in Pro",
           "A+ Content on 3 products",

@@ -7,7 +7,7 @@ import type {
 
 export const siteSettings: SiteSettings = {
   name: "Daniela Silva, Digital Strategy",
-  whatsappNumber: "PENDIENTE_WHATSAPP",
+  whatsappNumber: "+584221754245",
   whatsappDefaultMessage:
     "Hi, Daniela. I want to tell you my idea and see how we turn it into a business that sells.",
   email: "PENDIENTE_CORREO",
@@ -25,71 +25,6 @@ export const primaryNav: NavLink[] = [
 ];
 
 export const megaMenu: MegaMenuCategory[] = [
-  {
-    id: "vender",
-    label: "Sell",
-    services: [
-      {
-        label: "Sales & Booking Page",
-        promise: "A page that sells and books appointments for you.",
-        href: "/en#soluciones",
-      },
-    ],
-  },
-  {
-    id: "tienda",
-    label: "Store",
-    services: [
-      {
-        label: "Online Store & Catalog",
-        promise: "Your catalog, done looking pretty and starting to sell.",
-        href: "/en#soluciones",
-      },
-      {
-        label: "Shopify Stores",
-        promise: "Your Shopify store, ready to take orders.",
-        href: "/en#soluciones",
-      },
-    ],
-  },
-  {
-    id: "amazon",
-    label: "Amazon",
-    services: [
-      {
-        label: "Amazon Stores",
-        promise: "Sell on Amazon without getting lost in the process.",
-        href: "/en#soluciones",
-      },
-      {
-        label: "Amazon Affiliates",
-        promise: "Earn commissions recommending what people already buy.",
-        href: "/en#soluciones",
-      },
-    ],
-  },
-  {
-    id: "controlar",
-    label: "Control",
-    services: [
-      {
-        label: "Custom Admin System",
-        promise: "Stop running your business blind.",
-        href: "/en#soluciones",
-      },
-    ],
-  },
-  {
-    id: "crear",
-    label: "Build",
-    services: [
-      {
-        label: "Custom Platforms",
-        promise: "You have an idea and don't know how to build it. We build it for you.",
-        href: "/en#soluciones",
-      },
-    ],
-  },
   {
     id: "marca-contenido",
     label: "Brand & content",
@@ -118,6 +53,71 @@ export const megaMenu: MegaMenuCategory[] = [
       {
         label: "Sales Audit",
         promise: "Find out what's holding your sales back. Free.",
+        href: "/en#soluciones",
+      },
+    ],
+  },
+  {
+    id: "amazon",
+    label: "Amazon",
+    services: [
+      {
+        label: "Amazon Stores",
+        promise: "Sell on Amazon without getting lost in the process.",
+        href: "/en#soluciones",
+      },
+      {
+        label: "Amazon Affiliates",
+        promise: "Earn commissions recommending what people already buy.",
+        href: "/en#soluciones",
+      },
+    ],
+  },
+  {
+    id: "vender",
+    label: "Sell",
+    services: [
+      {
+        label: "Sales & Booking Page",
+        promise: "A page that sells and books appointments for you.",
+        href: "/en#soluciones",
+      },
+    ],
+  },
+  {
+    id: "tienda",
+    label: "Store",
+    services: [
+      {
+        label: "Online Store & Catalog",
+        promise: "Your catalog, done looking pretty and starting to sell.",
+        href: "/en#soluciones",
+      },
+      {
+        label: "Shopify Stores",
+        promise: "Your Shopify store, ready to take orders.",
+        href: "/en#soluciones",
+      },
+    ],
+  },
+  {
+    id: "controlar",
+    label: "Custom Systems",
+    services: [
+      {
+        label: "Custom Admin System",
+        promise: "Stop running your business blind.",
+        href: "/en#soluciones",
+      },
+    ],
+  },
+  {
+    id: "crear",
+    label: "Digital Strategy",
+    services: [
+      {
+        label: "Custom Platforms",
+        promise: "You have an idea and don't know how to build it. We build it for you.",
         href: "/en#soluciones",
       },
     ],
