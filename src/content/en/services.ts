@@ -57,7 +57,7 @@ export const services: Service[] = [
       "Your store open 24 hours, with inventory up to date and orders straight to your WhatsApp.",
     ctaLabel: "I want my store",
     benefits: [
-      "Visual, interactive presentation, up to unlimited products in Premium",
+      "Visual, interactive presentation, unlimited products in Premium",
       "Direct purchase via WhatsApp or payment gateway",
       "Instant quote tool and cart recovery from Pro onward",
     ],

@@ -4,14 +4,14 @@ export const about: AboutContent = {
   eyebrow: "Who's behind this",
   title: "I don't sell hours. I build assets that work for you.",
   body: [
-    "AI systems builder and SaaS founder, with more than 8 years building digital infrastructure for businesses in Colombia, Venezuela, Peru, Mexico, and the United States.",
+    "AI systems builder and SaaS founder, with more than 6 years building digital infrastructure for businesses in Colombia, Venezuela, Peru, Mexico, and the United States.",
     "I don't just write code: I operate my own SaaS, Cleaning Angels, so I know exactly what it takes to keep a system alive after launch.",
     "Today I bring that same experience to sales pages, stores, admin systems, and custom platforms: clear pricing, real delivery, and the code is always yours.",
   ],
   highlights: [
-    { value: "8+", label: "Years building digital systems" },
+    { value: "6+", label: "Years building digital systems" },
     { value: "50+", label: "Systems shipped" },
-    { value: "$2.4M+", label: "In revenue influenced" },
+    { value: "100%", label: "The code is always yours" },
     { value: "5 countries", label: "Colombia, Venezuela, Peru, Mexico, and the US" },
   ],
   photoAlt: "Daniela Silva, digital strategist",

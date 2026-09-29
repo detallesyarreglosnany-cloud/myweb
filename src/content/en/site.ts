@@ -155,6 +155,6 @@ export const footer: FooterContent = {
       ],
     },
   ],
-  legal: `© ${new Date().getFullYear()} ${siteSettings.name}. All rights reserved.`,
+  legal: `© ${new Date().getFullYear()} ${siteSettings.name}. All rights reserved. Developed by Daniela Silva.`,
   languageLabel: "Language",
 };

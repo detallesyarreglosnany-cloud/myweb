@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ComponentType } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import { easeOut, fadeUp, cascade, cascadeItem } from "@/lib/motion";
@@ -9,6 +9,13 @@ import { Button } from "@/components/ui/Button";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SELECT_SOLUTION_EVENT } from "@/lib/solution-select";
 import { TabIcon } from "./tabIcons";
+import { AdminPanelMockup } from "./mockups/AdminPanelMockup";
+import { SalesDashboardMockup } from "./mockups/SalesDashboardMockup";
+
+const SERVICE_MOCKUPS: Record<string, ComponentType> = {
+  "sistema-administrativo": AdminPanelMockup,
+  "revenue-autopilot": SalesDashboardMockup,
+};
 
 function CheckIcon() {
   return (
@@ -112,6 +119,7 @@ export function ServicesGrid() {
         {filteredServices.map((service) => {
           const isRevealed = revealedSlug === service.slug;
           const isHighlighted = highlightSlug === service.slug;
+          const Mockup = SERVICE_MOCKUPS[service.slug];
           return (
             <motion.div
               key={service.slug}
@@ -153,6 +161,12 @@ export function ServicesGrid() {
                   <p className="text-sm leading-relaxed text-text-soft">
                     {service.support}
                   </p>
+
+                  {Mockup && (
+                    <div className="overflow-hidden rounded-[10px]">
+                      <Mockup />
+                    </div>
+                  )}
 
                   <ul className="flex flex-col gap-2">
                     {service.benefits.slice(0, 3).map((benefit) => (
