@@ -3,12 +3,14 @@ import * as esServices from "./es/services";
 import * as esPains from "./es/pains";
 import * as esHome from "./es/home";
 import * as esAbout from "./es/about";
+import * as esTestimonials from "./es/testimonials";
 
 import * as en from "./en/site";
 import * as enServices from "./en/services";
 import * as enPains from "./en/pains";
 import * as enHome from "./en/home";
 import * as enAbout from "./en/about";
+import * as enTestimonials from "./en/testimonials";
 
 import type { Locale } from "./types";
 
@@ -19,6 +21,7 @@ const dictionaries = {
     ...esPains,
     ...esHome,
     ...esAbout,
+    ...esTestimonials,
   },
   en: {
     ...en,
@@ -26,6 +29,7 @@ const dictionaries = {
     ...enPains,
     ...enHome,
     ...enAbout,
+    ...enTestimonials,
   },
 } as const;
 
