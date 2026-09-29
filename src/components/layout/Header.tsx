@@ -6,6 +6,7 @@ import { useDictionary } from "@/lib/dictionary-context";
 import { buildWhatsappLink, isWhatsappPending } from "@/lib/whatsapp";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { Logo } from "@/components/ui/Logo";
 import { MegaMenu } from "./MegaMenu";
 import { MobileMenu } from "./MobileMenu";
 
@@ -37,9 +38,7 @@ export function Header() {
       }`}
     >
       <div className="container-site relative flex h-20 items-center justify-between">
-        <Link href={`/${locale}`} className="text-lg font-semibold text-text">
-          {siteSettings.name}
-        </Link>
+        <Logo locale={locale} height={36} />
 
         <nav className="hidden items-center gap-1 md:flex">
           {primaryNav.map((link) => (
