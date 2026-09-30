@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import { cascade, cascadeItem, easeOut } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export function AboutMe() {
   const { dictionary } = useDictionary();
@@ -31,7 +32,9 @@ export function AboutMe() {
           </div>
           <div className="absolute -bottom-4 -right-4 rounded-[12px] border border-line-strong bg-raised px-4 py-3">
             <div className="text-2xl font-semibold text-sand">
-              {about.highlights[0]?.value}
+              {about.highlights[0] && (
+                <AnimatedCounter value={about.highlights[0].value} />
+              )}
             </div>
             <div className="max-w-[140px] text-[11px] uppercase tracking-[0.05em] text-text-soft">
               {about.highlights[0]?.label}
@@ -57,30 +60,35 @@ export function AboutMe() {
             {about.title}
           </motion.h2>
 
-          <motion.div variants={cascadeItem} className="flex flex-col gap-4">
+          <motion.div variants={cascade(0.1)} className="flex flex-col gap-4">
             {about.body.map((paragraph) => (
-              <p
+              <motion.p
                 key={paragraph}
+                variants={cascadeItem}
                 className="max-w-xl text-[17px] leading-[1.6] text-text-soft"
               >
                 {paragraph}
-              </p>
+              </motion.p>
             ))}
           </motion.div>
 
           <motion.div
-            variants={cascadeItem}
+            variants={cascade(0.08)}
             className="grid grid-cols-1 gap-4 border-t border-line pt-6 sm:grid-cols-3"
           >
             {about.highlights.map((item) => (
-              <div key={item.label} className="flex flex-col gap-1">
+              <motion.div
+                key={item.label}
+                variants={cascadeItem}
+                className="flex flex-col gap-1"
+              >
                 <span className="text-xl font-semibold text-text">
-                  {item.value}
+                  <AnimatedCounter value={item.value} />
                 </span>
                 <span className="text-xs leading-snug text-text-soft">
                   {item.label}
                 </span>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>

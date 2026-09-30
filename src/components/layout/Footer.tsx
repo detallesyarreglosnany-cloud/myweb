@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { getDictionary } from "@/content";
 import type { Locale } from "@/content/types";
+import { fadeUp } from "@/lib/motion";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Logo } from "@/components/ui/Logo";
 
@@ -8,7 +12,13 @@ export function Footer({ locale }: { locale: Locale }) {
   const { footer, siteSettings } = getDictionary(locale);
 
   return (
-    <footer className="mt-auto border-t border-line bg-raised pb-20 md:pb-0">
+    <motion.footer
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={fadeUp.show.transition}
+      className="mt-auto border-t border-line bg-raised pb-20 md:pb-0"
+    >
       <div className="container-site grid grid-cols-2 gap-10 py-16 md:grid-cols-5">
         <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
           <Logo locale={locale} height={40} />
@@ -18,10 +28,10 @@ export function Footer({ locale }: { locale: Locale }) {
             <h3 className="text-sm font-medium text-text-soft">{column.title}</h3>
             <ul className="flex flex-col gap-2">
               {column.links.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-text hover:text-sand"
+                    className="link-underline text-sm text-text hover:text-sand"
                   >
                     {link.label}
                   </Link>
@@ -39,6 +49,6 @@ export function Footer({ locale }: { locale: Locale }) {
           <LanguageSwitcher />
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import { buildWhatsappLink, isWhatsappPending } from "@/lib/whatsapp";
 
@@ -37,17 +38,28 @@ export function WhatsAppButton() {
 
   return (
     <>
-      <a
-        href={href ?? "#"}
-        aria-disabled={pending || undefined}
-        target={pending ? undefined : "_blank"}
-        rel={pending ? undefined : "noopener noreferrer"}
-        title={pending ? pendingLabel : label}
-        className="fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-sand text-[var(--color-base)] shadow-none transition-colors hover:bg-nude md:flex"
-      >
-        <WhatsAppIcon />
-        <span className="sr-only">{pending ? pendingLabel : label}</span>
-      </a>
+      <div className="fixed bottom-6 right-6 z-40 hidden md:block">
+        <motion.span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-full bg-sand/50"
+          animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
+          transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.a
+          href={href ?? "#"}
+          aria-disabled={pending || undefined}
+          target={pending ? undefined : "_blank"}
+          rel={pending ? undefined : "noopener noreferrer"}
+          title={pending ? pendingLabel : label}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.96 }}
+          transition={{ duration: 0.25 }}
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-sand text-[var(--color-base)] transition-colors hover:bg-nude"
+        >
+          <WhatsAppIcon />
+          <span className="sr-only">{pending ? pendingLabel : label}</span>
+        </motion.a>
+      </div>
 
       <a
         href={href ?? "#"}

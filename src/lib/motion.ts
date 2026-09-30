@@ -31,3 +31,10 @@ export const cascadeItem = {
     transition: { duration: 0.6, ease: easeOut },
   },
 };
+
+/** Hover/tap timings para microinteracciones: 200-300ms, sin rebote. */
+export const hoverLift = {
+  whileHover: { y: -2, scale: 1.015 },
+  whileTap: { scale: 0.98 },
+  transition: { duration: 0.25, ease: easeOut },
+};

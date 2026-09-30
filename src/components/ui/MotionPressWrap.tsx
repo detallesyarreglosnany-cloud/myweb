@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
+import { easeOut } from "@/lib/motion";
 
 export function MotionPressWrap({
   children,
@@ -13,8 +14,9 @@ export function MotionPressWrap({
   return (
     <motion.span
       className={className}
-      whileTap={{ scale: 0.97 }}
-      transition={{ duration: 0.12 }}
+      whileHover={{ scale: 1.02, y: -1 }}
+      whileTap={{ scale: 0.97, y: 0 }}
+      transition={{ duration: 0.25, ease: easeOut }}
     >
       {children}
     </motion.span>

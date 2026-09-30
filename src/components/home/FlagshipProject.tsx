@@ -30,19 +30,13 @@ export function FlagshipProject() {
           {flagshipProject.description}
         </p>
 
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="mt-8 max-w-2xl"
-        >
+        <div className="mt-8 max-w-2xl">
           <PhotoMockup
             src="/mockups/cleaning-angels.jpg"
             alt={flagshipProject.title}
             aspectClassName="aspect-[2.25/1]"
           />
-        </motion.div>
+        </div>
 
         <motion.div
           variants={cascade(0.06)}

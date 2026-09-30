@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
+import { MotionConfig } from "motion/react";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -19,7 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html className={`${figtree.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-base text-text">
-        {children}
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>
     </html>
   );

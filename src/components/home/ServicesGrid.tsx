@@ -119,7 +119,7 @@ export function ServicesGrid() {
 
       <motion.div
         key={activeFilter}
-        variants={cascade(0.04)}
+        variants={cascade(0.08)}
         initial="hidden"
         animate="show"
         className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
@@ -149,7 +149,9 @@ export function ServicesGrid() {
                 >
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-xs uppercase tracking-[0.05em] text-text-soft">
-                      <TabIcon id={service.category} />
+                      <span className="inline-flex transition-transform duration-200 group-hover:scale-110">
+                        <TabIcon id={service.category} />
+                      </span>
                       {categoryLabels.get(service.category)}
                     </span>
                     {service.badge && (

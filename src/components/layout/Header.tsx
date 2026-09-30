@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import { buildWhatsappLink, isWhatsappPending } from "@/lib/whatsapp";
+import { easeOut } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Logo } from "@/components/ui/Logo";
@@ -37,7 +39,12 @@ export function Header() {
         scrolled ? "border-b border-line bg-base/90" : "border-b border-transparent"
       }`}
     >
-      <div className="container-site relative flex h-20 items-center justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: easeOut }}
+        className="container-site relative flex h-20 items-center justify-between"
+      >
         <Logo locale={locale} height={36} />
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -52,7 +59,7 @@ export function Header() {
             >
               <Link
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-text-soft transition-colors hover:text-text"
+                className="link-underline rounded-lg px-3 py-2 text-sm text-text-soft transition-colors hover:text-text"
               >
                 {link.label}
               </Link>
@@ -70,7 +77,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(true)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-text md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-line-strong text-text transition-colors duration-200 hover:border-sand md:hidden"
           aria-label={locale === "es" ? "Abrir menú" : "Open menu"}
         >
           <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
@@ -83,7 +90,7 @@ export function Header() {
         </button>
 
         <MegaMenu open={megaMenuOpen} onClose={() => setMegaMenuOpen(false)} />
-      </div>
+      </motion.div>
 
       <MobileMenu open={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
     </header>

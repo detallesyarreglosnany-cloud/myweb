@@ -3,13 +3,17 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
-import { fadeUp } from "@/lib/motion";
+import { fadeUp, easeOut } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import type { Testimonial } from "@/content/types";
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="flex w-[320px] shrink-0 flex-col gap-4 rounded-[12px] border border-line bg-raised p-6">
+    <motion.div
+      whileHover={{ y: -3 }}
+      transition={{ duration: 0.25, ease: easeOut }}
+      className="flex w-[320px] shrink-0 flex-col gap-4 rounded-[12px] border border-line bg-raised p-6"
+    >
       <p className="text-[15px] leading-relaxed text-text">
         <span className="text-nude">&ldquo;</span>
         {testimonial.quote}
@@ -34,7 +38,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           </span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -60,7 +64,13 @@ export function Testimonials() {
         </motion.div>
       </div>
 
-      <div className="relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.6, ease: easeOut }}
+        className="relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+      >
         <div className="marquee-track flex w-max gap-5 px-6">
           {track.map((testimonial, index) => (
             <TestimonialCard
@@ -69,7 +79,7 @@ export function Testimonials() {
             />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -23,12 +23,13 @@ type ButtonAsButton = SharedProps &
 type ButtonProps = ButtonAsLink | ButtonAsButton;
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-colors duration-150";
+  "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-[color,background-color,border-color,box-shadow] duration-[250ms]";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-sand text-[var(--color-base)] hover:bg-nude",
+  primary:
+    "bg-sand text-[var(--color-base)] shadow-[0_0_0_rgba(205,186,156,0)] hover:bg-nude hover:shadow-[0_10px_24px_-10px_rgba(205,186,156,0.55)]",
   ghost:
-    "bg-transparent text-text border border-line-strong hover:border-sand",
+    "bg-transparent text-text border border-line-strong shadow-[0_0_0_rgba(0,0,0,0)] hover:border-sand hover:shadow-[0_10px_24px_-14px_rgba(205,186,156,0.35)]",
 };
 
 export function Button(props: ButtonProps) {

@@ -13,7 +13,12 @@ export function GlowCard({
   id?: string;
 }) {
   return (
-    <div id={id} className={`group relative ${className}`}>
+    <motion.div
+      id={id}
+      className={`group relative ${className}`}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
+    >
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute -inset-px rounded-[13px] bg-sand/25 blur-md"
@@ -25,6 +30,6 @@ export function GlowCard({
       >
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 }
