@@ -1,19 +1,52 @@
 import type { AboutContent, FlagshipProjectContent } from "../types";
 
 export const about: AboutContent = {
-  eyebrow: "Quién está detrás",
-  title: "No vendo horas. Construyo activos que trabajan por ti.",
-  body: [
-    "Creadora de sistemas de IA y fundadora de un SaaS propio, con más de 6 años construyendo infraestructura digital para negocios en Colombia, Venezuela, Perú, México y Estados Unidos.",
-    "No solo escribo código: opero mi propio SaaS, Cleaning Angels, así que sé exactamente lo que cuesta mantener un sistema vivo después del lanzamiento.",
-    "Hoy pongo esa misma experiencia al servicio de páginas de ventas, tiendas, sistemas administrativos y plataformas a la medida: precio claro y entrega real.",
+  eyebrow: "Sobre mí",
+  titleLead: "Tu negocio no necesita otra página web.",
+  titleAccent: "Necesita un sistema que trabaje por ti.",
+  problemLabel: "El problema",
+  problemText:
+    "Si tu negocio depende de que alguien responda mensajes, tome pedidos manualmente, confirme citas, explique tus servicios una y otra vez o persiga clientes para cerrar una venta, probablemente no necesitas “más presencia digital”.",
+  solutionLabel: "La solución",
+  solutionText:
+    "Necesitas una solución ajustada a cómo funciona realmente tu negocio. Diseño y desarrollo páginas web, tiendas online, sistemas administrativos, automatizaciones y plataformas a medida que se adaptan a tus procesos, tus clientes y tus objetivos.",
+  outcomes: [
+    "Una web que convierta visitas en clientes",
+    "Una tienda que reciba pedidos y pagos",
+    "Un sistema que organice tu operación",
+    "Automatizaciones que ahorren horas de trabajo",
+    "Una plataforma a la medida de tu modelo de negocio",
+  ],
+  closingLine:
+    "La tecnología deja de ser un gasto cuando empieza a resolver problemas reales.",
+  experienceEyebrow: "Mi experiencia",
+  experienceIntro:
+    "Soy Daniela Silva, creadora de soluciones digitales y fundadora de mi propio SaaS, Cleaning Angels.",
+  experienceYears:
+    "Llevo más de 6 años construyendo infraestructura digital para negocios y proyectos en Colombia, Venezuela, Perú, México y Estados Unidos.",
+  experienceProcess:
+    "He desarrollado más de 50 sistemas y soluciones digitales, y conozco el proceso completo: desde convertir una idea en una experiencia digital clara, hasta ponerla en funcionamiento y mantenerla operativa después del lanzamiento.",
+  cleaningAngelsCta: "Quiero una licencia de Cleaning Angels",
+  perspectivesIntro: "Por eso, cada proyecto lo abordo desde dos perspectivas:",
+  perspectives: [
+    {
+      label: "Tu cliente",
+      description: "Lo que necesita para confiar, comprar o contactarte.",
+    },
+    {
+      label: "Tu negocio",
+      description: "Lo que necesita para funcionar mejor.",
+    },
   ],
   highlights: [
-    { value: "6+", label: "Años construyendo sistemas digitales" },
-    { value: "50+", label: "Sistemas entregados" },
-    { value: "5 países", label: "Colombia, Venezuela, Perú, México y EEUU" },
+    { value: "6+ años", label: "Construyendo soluciones digitales" },
+    { value: "50+ sistemas", label: "Diseñados y entregados" },
+    { value: "5 países", label: "Colombia · Venezuela · Perú · México · EE. UU." },
   ],
-  photoAlt: "Daniela Silva, estratega digital",
+  closingTitleLead: "Tu negocio es único.",
+  closingTitleAccent: "La solución también debería serlo.",
+  closingCta: "Hablemos de lo que necesitas construir",
+  photoAlt: "Daniela Silva, creadora de soluciones digitales",
 };
 
 export const flagshipProject: FlagshipProjectContent = {

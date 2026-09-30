@@ -61,7 +61,7 @@ export function ServicesGrid() {
           behavior: "smooth",
           block: "center",
         });
-      }, 100);
+      }, 450);
       window.setTimeout(() => setHighlightSlug(null), 2200);
     }
     window.addEventListener(SELECT_SOLUTION_EVENT, onSelect);

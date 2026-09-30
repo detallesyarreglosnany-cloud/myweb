@@ -104,11 +104,32 @@ export interface AboutHighlight {
   value: string;
 }
 
+export interface AboutPerspective {
+  label: string;
+  description: string;
+}
+
 export interface AboutContent {
   eyebrow: string;
-  title: string;
-  body: string[];
+  titleLead: string;
+  titleAccent: string;
+  problemLabel: string;
+  problemText: string;
+  solutionLabel: string;
+  solutionText: string;
+  outcomes: string[];
+  closingLine: string;
+  experienceEyebrow: string;
+  experienceIntro: string;
+  experienceYears: string;
+  experienceProcess: string;
+  cleaningAngelsCta: string;
+  perspectivesIntro: string;
+  perspectives: AboutPerspective[];
   highlights: AboutHighlight[];
+  closingTitleLead: string;
+  closingTitleAccent: string;
+  closingCta: string;
   photoAlt: string;
 }
 
