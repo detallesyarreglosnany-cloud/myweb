@@ -6,6 +6,7 @@ import { cascade, cascadeItem } from "@/lib/motion";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Pill } from "@/components/ui/Pill";
+import { HeroNetworkPattern } from "./HeroNetworkPattern";
 
 export function Hero() {
   const { dictionary } = useDictionary();
@@ -13,6 +14,18 @@ export function Hero() {
 
   return (
     <section className="container-site relative overflow-hidden pb-20 pt-16 md:pt-24">
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-[-10%] inset-y-[-15%] text-sand/40 blur-[6px]"
+        animate={{ x: [0, 18, -12, 0], y: [0, -10, 8, 0] }}
+        transition={{ duration: 40, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <HeroNetworkPattern />
+      </motion.div>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-canvas)_0%,var(--color-canvas)_35%,transparent_75%)]"
+      />
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-olive/[0.16] blur-[120px]"

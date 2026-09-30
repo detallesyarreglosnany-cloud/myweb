@@ -9,12 +9,20 @@ import { Button } from "@/components/ui/Button";
 import { GlowCard } from "@/components/ui/GlowCard";
 import { SELECT_SOLUTION_EVENT } from "@/lib/solution-select";
 import { TabIcon } from "./tabIcons";
-import { AdminPanelMockup } from "./mockups/AdminPanelMockup";
 import { SalesDashboardMockup } from "./mockups/SalesDashboardMockup";
+import { PhotoMockup } from "./mockups/PhotoMockup";
 
 const SERVICE_MOCKUPS: Record<string, ComponentType> = {
-  "sistema-administrativo": AdminPanelMockup,
   "revenue-autopilot": SalesDashboardMockup,
+};
+
+const SERVICE_PHOTOS: Record<string, string> = {
+  "sistema-administrativo": "/mockups/sistema-administrativo.jpg",
+  "shopify-tiendas": "/mockups/shopify-tiendas.jpg",
+  "saas-white-label": "/mockups/saas-white-label.jpg",
+  "asesoria-mentoria": "/mockups/asesoria-mentoria.jpg",
+  "plataformas-medida": "/mockups/plataformas-medida.jpg",
+  "tienda-catalogo": "/mockups/tienda-catalogo.jpg",
 };
 
 function CheckIcon() {
@@ -120,6 +128,7 @@ export function ServicesGrid() {
           const isRevealed = revealedSlug === service.slug;
           const isHighlighted = highlightSlug === service.slug;
           const Mockup = SERVICE_MOCKUPS[service.slug];
+          const photoSrc = SERVICE_PHOTOS[service.slug];
           return (
             <motion.div
               key={service.slug}
@@ -162,6 +171,7 @@ export function ServicesGrid() {
                     {service.support}
                   </p>
 
+                  {photoSrc && <PhotoMockup src={photoSrc} alt={service.name} />}
                   {Mockup && (
                     <div className="overflow-hidden rounded-[10px]">
                       <Mockup />

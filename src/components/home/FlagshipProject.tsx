@@ -5,6 +5,7 @@ import { useDictionary } from "@/lib/dictionary-context";
 import { fadeUp, cascade, cascadeItem } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
+import { PhotoMockup } from "./mockups/PhotoMockup";
 
 export function FlagshipProject() {
   const { dictionary } = useDictionary();
@@ -28,6 +29,20 @@ export function FlagshipProject() {
         <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-text-soft">
           {flagshipProject.description}
         </p>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          className="mt-8 max-w-2xl"
+        >
+          <PhotoMockup
+            src="/mockups/cleaning-angels.jpg"
+            alt={flagshipProject.title}
+            aspectClassName="aspect-[2.25/1]"
+          />
+        </motion.div>
 
         <motion.div
           variants={cascade(0.06)}
