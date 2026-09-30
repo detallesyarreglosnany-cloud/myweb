@@ -20,7 +20,7 @@ export const productFrame: ProductFrameContent = {
   title: "This is what a business that sells itself looks like",
   caption: "Product preview",
   placeholderNote:
-    "First visual proof of the product goes here (real screenshot or demo). Pending material from Daniela.",
+    "Custom systems, built with AI, designed to digitize, secure, and grow your business.",
 };
 
 export const solutions: SolutionsSectionContent = {

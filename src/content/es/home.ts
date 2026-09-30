@@ -20,7 +20,7 @@ export const productFrame: ProductFrameContent = {
   title: "Así se ve un negocio que vende solo",
   caption: "Vista previa del producto",
   placeholderNote:
-    "Aquí va la primera prueba visual del producto (captura real o demo). Pendiente de material de Daniela.",
+    "Sistemas a medida, con IA integrada, pensados para digitalizar, asegurar y hacer crecer tu negocio.",
 };
 
 export const solutions: SolutionsSectionContent = {
