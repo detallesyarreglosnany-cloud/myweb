@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, ViewTransition, type ComponentType } from "react";
+import { useEffect, useRef, ViewTransition, type ComponentType, type ReactNode } from "react";
 import { useInView } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import type { Service, ServiceDemoId } from "@/content/types";
@@ -9,6 +9,7 @@ import { AffiliateDemo, AmazonDemo, BookingDemo, ShopifyDemo, StoreDemo } from "
 import { AppDemo, DashboardDemo, RevenueDemo, SaasDemo } from "./demos/SystemDemos";
 import { AgentDemo, AutomationDemo } from "./demos/AiDemos";
 import { AuditDemo, BrandDemo, ContentDemo, RoadmapDemo } from "./demos/BrandDemos";
+import { LiveAgent, LiveBooking, LiveStore, type LiveDemoProps } from "./demos/LiveDemos";
 
 const DEMOS: Record<ServiceDemoId, ComponentType<DemoProps>> = {
   booking: BookingDemo,
@@ -27,6 +28,17 @@ const DEMOS: Record<ServiceDemoId, ComponentType<DemoProps>> = {
   roadmap: RoadmapDemo,
   audit: AuditDemo,
 };
+
+/** Demos que el visitante puede usar con sus propias manos. */
+const LIVE_DEMOS: Partial<Record<ServiceDemoId, ComponentType<LiveDemoProps>>> = {
+  booking: LiveBooking,
+  store: LiveStore,
+  agent: LiveAgent,
+};
+
+export function hasLiveDemo(service: Service): boolean {
+  return service.demo in LIVE_DEMOS;
+}
 
 function DemoVideo({ src, poster, label }: { src: string; poster: string; label: string }) {
   const ref = useRef<HTMLVideoElement>(null);
@@ -54,39 +66,53 @@ function DemoVideo({ src, poster, label }: { src: string; poster: string; label:
   );
 }
 
-export function ServiceDemo({ service }: { service: Service }) {
-  const { dictionary } = useDictionary();
-  const { solutions, demos } = dictionary;
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.45 });
-  const [run, setRun] = useState(0);
-  const Demo = DEMOS[service.demo];
+function Morph({ name, children }: { name?: string; children: ReactNode }) {
+  return name ? <ViewTransition name={name}>{children}</ViewTransition> : <>{children}</>;
+}
 
+/**
+ * Demo animada de un servicio. Se reproduce cada vez que entra en pantalla.
+ * `interactive` muestra la versión que el visitante puede usar, si existe.
+ * `morph` conecta la demo de la tarjeta con la de la ficha al navegar; solo
+ * una instancia por página puede tenerlo activo.
+ */
+export function ServiceDemo({
+  service,
+  interactive = false,
+  morph = false,
+}: {
+  service: Service;
+  interactive?: boolean;
+  morph?: boolean;
+}) {
+  const { dictionary } = useDictionary();
+  const { demos } = dictionary;
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { amount: 0.45 });
+  const Live = LIVE_DEMOS[service.demo];
+
+  if (interactive && Live && !service.video) {
+    return (
+      <Morph name={morph ? `demo-${service.slug}` : undefined}>
+        <div className="min-h-[300px] w-full">
+          <Live copy={demos} />
+        </div>
+      </Morph>
+    );
+  }
+
+  const Demo = DEMOS[service.demo];
   return (
-    <div className="flex flex-col gap-2">
-      <ViewTransition name={`demo-${service.slug}`}>
-        <div ref={ref} className="@container relative aspect-[16/10] w-full">
-          {service.video ? (
-            <DemoVideo src={service.video.src} poster={service.video.poster} label={service.name} />
-          ) : (
-            <div aria-hidden="true" className="h-full w-full">
-              <Demo key={run} active={inView} copy={demos} />
-            </div>
-          )}
-        </div>
-      </ViewTransition>
-      {!service.video && (
-        <div className="relative z-10 flex items-center justify-between gap-2">
-          <span className="text-[11px] text-text-soft">{solutions.sampleDataLabel}</span>
-          <button
-            type="button"
-            onClick={() => setRun((value) => value + 1)}
-            className="min-h-[32px] rounded-full border border-line-strong px-3 text-[11px] text-text-soft transition-colors duration-200 hover:border-sand hover:text-text"
-          >
-            {solutions.replayLabel}
-          </button>
-        </div>
-      )}
-    </div>
+    <Morph name={morph ? `demo-${service.slug}` : undefined}>
+      <div ref={ref} className="@container relative aspect-[16/10] w-full">
+        {service.video ? (
+          <DemoVideo src={service.video.src} poster={service.video.poster} label={service.name} />
+        ) : (
+          <div aria-hidden="true" className="h-full w-full">
+            <Demo active={inView} copy={demos} />
+          </div>
+        )}
+      </div>
+    </Morph>
   );
 }

@@ -125,17 +125,36 @@ button:focus-visible,
   top: 16px;
 }
 
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
+/* Superficies de las demostraciones: cada familia de soluciones tiene su propio tratamiento. */
+.surface-paper {
+  background-color: var(--color-nude);
+  background-image: radial-gradient(rgb(11 15 9 / 0.16) 1px, transparent 1.5px);
+  background-size: 16px 16px;
 }
 
-.marquee-track {
-  animation: marquee 50s linear infinite;
+.surface-device {
+  background-color: var(--color-olive-panel);
+  background-image: repeating-linear-gradient(135deg, rgb(243 244 238 / 0.04) 0 1px, transparent 1px 14px);
 }
 
-.marquee-track:hover,
-.marquee-track:focus-within {
-  animation-play-state: paused;
+.surface-blueprint {
+  background-color: var(--color-canvas);
+  background-image:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.surface-matrix {
+  background-color: var(--color-base);
+  background-image: radial-gradient(rgb(154 171 120 / 0.35) 1px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.surface-sand {
+  background-color: var(--color-sand);
+}
+
+.surface-editorial {
+  background-color: var(--color-raised);
 }

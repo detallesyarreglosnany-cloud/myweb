@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Pill } from "@/components/ui/Pill";
 import { HeroNetworkPattern } from "./HeroNetworkPattern";
-import { HeroComposition } from "./HeroComposition";
+import { HeroStage } from "./HeroStage";
 
 export function Hero() {
   const { dictionary } = useDictionary();
@@ -18,53 +18,45 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 text-sand/30 blur-[6px] [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[80%] text-sand/25 blur-[6px] [mask-image:radial-gradient(ellipse_at_50%_20%,black,transparent_70%)]"
       >
         <HeroNetworkPattern />
       </div>
 
-      <div className="container-site relative grid grid-cols-1 items-center gap-12 pb-20 pt-12 md:pt-20 lg:grid-cols-[1.05fr_1fr] lg:gap-10">
-        <motion.div
-          className="flex flex-col items-start gap-6"
-          variants={cascade(0.08)}
-          initial="hidden"
-          animate="show"
-        >
-          <motion.div variants={cascadeItem}>
+      <div className="container-site relative pb-16 pt-8 md:pb-24 md:pt-12">
+        <motion.div variants={cascade(0.08)} initial="hidden" animate="show" className="flex flex-col gap-6">
+          <motion.div variants={cascadeItem} className="flex flex-wrap items-center justify-between gap-4">
             <SectionLabel>{hero.eyebrow}</SectionLabel>
+            <Pill>{hero.trustBadge}</Pill>
           </motion.div>
 
           <motion.h1
             variants={cascadeItem}
-            className="text-[40px] font-semibold leading-[1.04] tracking-[-0.03em] text-text sm:text-[52px] lg:text-[58px] xl:text-[66px]"
+            className="max-w-[19ch] text-[36px] font-semibold leading-[1.02] tracking-[-0.035em] text-text sm:text-[54px] lg:text-[64px] xl:text-[70px]"
           >
-            {hero.headlinePrefix}{" "}
-            <span className="text-sand">{hero.headlineAccent}</span>
+            {hero.headlinePrefix} <span className="text-sand">{hero.headlineAccent}</span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             variants={cascadeItem}
-            className="max-w-[540px] text-[17px] leading-[1.6] text-text-soft md:text-lg"
+            className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
           >
-            {hero.support}
-          </motion.p>
-
-          <motion.div variants={cascadeItem} className="flex flex-col gap-3 sm:flex-row">
-            <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
-            <Button
-              href={buildWhatsappLink(siteSettings.whatsappNumber, hero.secondaryCta.whatsappMessage)}
-              variant="ghost"
-            >
-              {hero.secondaryCta.label}
-            </Button>
-          </motion.div>
-
-          <motion.div variants={cascadeItem}>
-            <Pill>{hero.trustBadge}</Pill>
+            <p className="max-w-[520px] text-[17px] leading-[1.6] text-text-soft md:text-lg">{hero.support}</p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
+              <Button
+                href={buildWhatsappLink(siteSettings.whatsappNumber, hero.secondaryCta.whatsappMessage)}
+                variant="ghost"
+              >
+                {hero.secondaryCta.label}
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
 
-        <HeroComposition layers={hero.layers} />
+        <div className="mt-10 md:mt-12">
+          <HeroStage stage={hero.stage} />
+        </div>
       </div>
     </section>
   );

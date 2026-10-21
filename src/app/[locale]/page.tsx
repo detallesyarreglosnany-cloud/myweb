@@ -5,11 +5,10 @@ import { serviceHref } from "@/lib/catalog";
 import { jsonLd, siteUrl } from "@/lib/site";
 import { Hero } from "@/components/home/Hero";
 import { ProductFrame } from "@/components/home/ProductFrame";
-import { PainRows } from "@/components/home/PainRows";
+import { PainsStory } from "@/components/home/PainsStory";
 import { ServiceCatalog } from "@/components/catalog/ServiceCatalog";
 import { ProcessSection } from "@/components/home/ProcessSection";
-import { FlagshipProject } from "@/components/home/FlagshipProject";
-import { Testimonials } from "@/components/home/Testimonials";
+import { CaseStudy } from "@/components/home/CaseStudy";
 import { AuditBand } from "@/components/home/AuditBand";
 import { AboutMe } from "@/components/home/AboutMe";
 import { ContactSection } from "@/components/home/ContactSection";
@@ -48,14 +47,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
         dangerouslySetInnerHTML={{ __html: jsonLd(structuredData) }}
       />
       <Hero />
-      <ProductFrame />
-      <PainRows />
+      <PainsStory />
       <ServiceCatalog />
+      <CaseStudy />
+      <ProductFrame />
       <ProcessSection />
-      <FlagshipProject />
-      <Testimonials />
-      <AuditBand />
       <AboutMe />
+      <AuditBand />
       <ContactSection />
     </>
   );

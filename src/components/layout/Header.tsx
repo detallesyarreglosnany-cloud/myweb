@@ -36,7 +36,7 @@ export function Header() {
   return (
     <header
       className={`sticky top-0 z-50 transition-colors duration-200 ${
-        scrolled ? "border-b border-line bg-base/90" : "border-b border-transparent"
+        scrolled ? "border-b border-line bg-base" : "border-b border-transparent"
       }`}
     >
       <motion.div

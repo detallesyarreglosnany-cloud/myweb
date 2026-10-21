@@ -36,14 +36,6 @@ export function ProductFrame() {
         transition={{ duration: 0.6, ease: easeOut }}
         className="relative"
       >
-        <motion.span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-full bg-olive/[0.16] blur-[100px]"
-          style={{ width: 480, height: 480, margin: "auto" }}
-          animate={{ opacity: [0.5, 0.9, 0.5] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-
         <motion.div
           whileHover={{ scale: 1.01 }}
           transition={{ duration: 0.4, ease: easeOut }}
@@ -59,7 +51,6 @@ export function ProductFrame() {
               src="/mockups/producto-en-accion.jpg"
               alt={productFrame.title}
               fill
-              priority
               className="object-cover"
               sizes="(max-width: 1200px) 100vw, 1200px"
             />

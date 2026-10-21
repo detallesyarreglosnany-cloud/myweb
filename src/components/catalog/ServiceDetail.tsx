@@ -102,7 +102,7 @@ export function ServiceDetail({ slug }: { slug: string }) {
           </motion.div>
         </motion.div>
         <div className="rounded-[16px] border border-line bg-canvas p-4 md:p-6">
-          <ServiceDemo service={service} />
+          <ServiceDemo service={service} interactive morph />
         </div>
       </header>
 

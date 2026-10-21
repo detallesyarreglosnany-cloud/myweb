@@ -30,7 +30,18 @@ export interface HeroContent {
   primaryCta: { label: string; href: string };
   secondaryCta: { label: string; whatsappMessage: string };
   trustBadge: string;
-  layers: { sales: string; operations: string; data: string; automation: string };
+  stage: HeroStageContent;
+}
+
+/** Textos de la composición del hero. Todo es ilustrativo, con datos ficticios. */
+export interface HeroStageContent {
+  note: string;
+  adminAlt: string;
+  appAlt: string;
+  feed: { title: string; detail: string }[];
+  booking: { title: string; slot: string; status: string };
+  flow: { label: string; steps: string[] };
+  agent: { question: string; answer: string };
 }
 
 export interface ProductFrameContent {
@@ -49,6 +60,12 @@ export interface Pain {
 export interface PainsSectionContent {
   eyebrow: string;
   title: string;
+  intro: string;
+  situationLabel: string;
+  costLabel: string;
+  solutionLabel: string;
+  resultLabel: string;
+  ctaLabel: string;
   items: Pain[];
 }
 
@@ -119,6 +136,7 @@ export interface Service {
 export interface CatalogCategory {
   id: CatalogCategoryId;
   label: string;
+  description: string;
 }
 
 export interface SolutionsSectionContent {
@@ -128,9 +146,18 @@ export interface SolutionsSectionContent {
   categories: CatalogCategory[];
   allFilterLabel: string;
   viewSolutionLabel: string;
-  replayLabel: string;
-  sampleDataLabel: string;
   featuredLabel: string;
+  demoNote: string;
+  countLabel: string;
+  quickViewLabel: string;
+  closeLabel: string;
+  problemLabel: string;
+  howLabel: string;
+  includesLabel: string;
+  optionsLabel: string;
+  customizeStandard: string;
+  customizeProposal: string;
+  tryLabel: string;
   customCta: { title: string; support: string; label: string };
 }
 
@@ -178,6 +205,20 @@ export interface ContactContent {
   support: string;
   whatsappLabel: string;
   instagramLabel: string;
+  form: {
+    needLabel: string;
+    otherOption: string;
+    detailLabel: string;
+    detailPlaceholder: string;
+    nameLabel: string;
+    submitLabel: string;
+    error: string;
+    success: string;
+    retryLabel: string;
+    /** {name}, {need} y {detail} se reemplazan al enviar. */
+    template: string;
+    anonymous: string;
+  };
 }
 
 export interface AboutHighlight {
@@ -212,6 +253,7 @@ export interface AboutContent {
   closingTitleAccent: string;
   closingCta: string;
   photoAlt: string;
+  role: string;
 }
 
 export interface FlagshipStat {
@@ -222,25 +264,22 @@ export interface FlagshipStat {
 export interface FlagshipProjectContent {
   eyebrow: string;
   title: string;
-  description: string;
+  location: string;
+  contextLabel: string;
+  context: string;
+  problemLabel: string;
+  problem: string;
+  solutionLabel: string;
+  solution: string;
+  flowsLabel: string;
+  flows: string[];
+  resultsLabel: string;
   stats: FlagshipStat[];
+  screenshotAlt: string;
+  screenshotCaption: string;
   linkLabel: string;
   linkHref: string;
-}
-
-export interface Testimonial {
-  name: string;
-  country: string;
-  flag: string;
-  quote: string;
-  service: string;
-  avatar: string;
-}
-
-export interface TestimonialsContent {
-  eyebrow: string;
-  title: string;
-  items: Testimonial[];
+  licenseLabel: string;
 }
 
 export interface FooterColumn {
@@ -256,6 +295,11 @@ export interface FooterContent {
 }
 
 export interface DemoCopy {
+  live: {
+    booking: { title: string; price: string; slots: string[]; pick: string; confirm: string; success: string };
+    store: { products: { name: string; price: string }[]; add: string; added: string; cart: string; checkout: string; sent: string };
+    agent: { name: string; online: string; typing: string; prompts: { question: string; answer: string }[] };
+  };
   booking: { reserve: string; confirmed: string; days: string[] };
   store: { order: string; stock: string; sent: string };
   shopify: { store: string; cart: string; pay: string };

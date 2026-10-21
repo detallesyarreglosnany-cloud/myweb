@@ -1,6 +1,38 @@
 import type { DemoCopy } from "../types";
 
 export const demos: DemoCopy = {
+  live: {
+    booking: {
+      title: "Limpieza profunda",
+      price: "$45",
+      slots: ["Jue 9:00", "Vie 15:00", "Sáb 10:00", "Sáb 15:00"],
+      pick: "Elige un horario",
+      confirm: "Confirmar reserva",
+      success: "Reserva confirmada. Te enviamos un recordatorio.",
+    },
+    store: {
+      products: [
+        { name: "Vela de soya", price: "$18" },
+        { name: "Jabón artesanal", price: "$9" },
+        { name: "Set de regalo", price: "$32" },
+      ],
+      add: "Agregar",
+      added: "Agregado",
+      cart: "Carrito",
+      checkout: "Pedir por WhatsApp",
+      sent: "Pedido enviado con el detalle de tu carrito.",
+    },
+    agent: {
+      name: "Agente IA",
+      online: "En línea",
+      typing: "Escribiendo",
+      prompts: [
+        { question: "¿Tienen disponibilidad el sábado?", answer: "Sí, a las 10:00 o a las 15:00. ¿Te reservo una?" },
+        { question: "¿Cuánto cuesta el servicio?", answer: "La limpieza profunda cuesta $45. ¿Quieres que te envíe el detalle?" },
+        { question: "¿Cómo puedo pagar?", answer: "Puedes pagar en línea al reservar. Te envío el enlace cuando confirmes." },
+      ],
+    },
+  },
   booking: {
     reserve: "Reservar",
     confirmed: "Cita agendada, abono recibido",

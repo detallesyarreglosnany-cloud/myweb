@@ -18,7 +18,7 @@ export const siteSettings: SiteSettings = {
 export const primaryNav: NavLink[] = [
   { label: "Solutions", href: "/en#soluciones" },
   { label: "Projects", href: "/en#proyectos" },
-  { label: "Results", href: "/en#resultados" },
+  { label: "About me", href: "/en#sobre-mi" },
   { label: "Resources", href: "/en#recursos" },
 ];
 
@@ -33,7 +33,6 @@ export const footer: FooterContent = {
       title: "Company",
       links: [
         { label: "Projects", href: "/en#proyectos" },
-        { label: "Results", href: "/en#resultados" },
         { label: "About", href: "/en#sobre-mi" },
       ],
     },

@@ -3,6 +3,12 @@ import type { PainsSectionContent } from "../types";
 export const pains: PainsSectionContent = {
   eyebrow: "Your day to day",
   title: "If any of this sounds like your day to day",
+  intro: "Pick the situation closest to yours and see how it gets solved.",
+  situationLabel: "What happens",
+  costLabel: "What it costs you",
+  solutionLabel: "How we solve it",
+  resultLabel: "What changes",
+  ctaLabel: "See the full solution",
   items: [
     {
       id: "dolor-1",

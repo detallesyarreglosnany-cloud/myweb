@@ -47,13 +47,30 @@ export const about: AboutContent = {
   closingTitleAccent: "La solución también debería serlo.",
   closingCta: "Hablemos de lo que necesitas construir",
   photoAlt: "Daniela Silva, creadora de soluciones digitales",
+  role: "Creadora y desarrolladora de soluciones digitales",
 };
 
 export const flagshipProject: FlagshipProjectContent = {
   eyebrow: "Proyecto estrella",
-  title: "Cleaning Angels, en Washington D.C., Maryland y Virginia",
-  description:
-    "Una agencia de limpieza con más de 40 reservas semanales, gestionadas antes por WhatsApp y papel. Diseñamos, construimos y operamos la plataforma que automatizó todo: reservas en línea, pagos, portal de clientes, gestión de personal y comunicaciones automáticas.",
+  title: "Cleaning Angels",
+  location: "Washington D.C., Maryland y Virginia",
+  contextLabel: "Contexto",
+  context: "Una agencia de limpieza con más de 40 reservas semanales.",
+  problemLabel: "El problema",
+  problem: "Todas esas reservas se gestionaban por WhatsApp y papel.",
+  solutionLabel: "La solución",
+  solution: "Diseñamos, construimos y operamos la plataforma que automatizó todo.",
+  flowsLabel: "Lo que hace la plataforma",
+  flows: [
+    "Reservas en línea",
+    "Pagos",
+    "Portal de clientes",
+    "Gestión de personal",
+    "Comunicaciones automáticas",
+  ],
+  resultsLabel: "Resultados",
+  screenshotAlt: "Panel de operación de una plataforma de limpieza",
+  screenshotCaption: "Vista de referencia del panel de operación.",
   stats: [
     { value: "−40%", label: "Citas perdidas" },
     { value: "+25%", label: "Reservas en 60 días" },
@@ -62,4 +79,5 @@ export const flagshipProject: FlagshipProjectContent = {
   ],
   linkLabel: "Ver el sitio en vivo",
   linkHref: "https://cleaning.angelss.co",
+  licenseLabel: "Quiero esta plataforma con mi marca",
 };

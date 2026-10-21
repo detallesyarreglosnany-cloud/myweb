@@ -47,13 +47,30 @@ export const about: AboutContent = {
   closingTitleAccent: "The solution should be too.",
   closingCta: "Let's talk about what you need to build",
   photoAlt: "Daniela Silva, digital solutions creator",
+  role: "Digital solutions creator and developer",
 };
 
 export const flagshipProject: FlagshipProjectContent = {
   eyebrow: "Flagship project",
-  title: "Cleaning Angels, in Washington D.C., Maryland, and Virginia",
-  description:
-    "A cleaning agency running more than 40 bookings a week, managed before through WhatsApp and paper. We designed, built, and operate the platform that automated everything: online booking, payments, a client portal, staff management, and automated communications.",
+  title: "Cleaning Angels",
+  location: "Washington D.C., Maryland, and Virginia",
+  contextLabel: "Context",
+  context: "A cleaning agency running more than 40 bookings a week.",
+  problemLabel: "The problem",
+  problem: "Every one of those bookings was managed through WhatsApp and paper.",
+  solutionLabel: "The solution",
+  solution: "We designed, built, and operate the platform that automated everything.",
+  flowsLabel: "What the platform does",
+  flows: [
+    "Online booking",
+    "Payments",
+    "Client portal",
+    "Staff management",
+    "Automated communications",
+  ],
+  resultsLabel: "Results",
+  screenshotAlt: "Operations panel of a cleaning platform",
+  screenshotCaption: "Reference view of the operations panel.",
   stats: [
     { value: "−40%", label: "No shows" },
     { value: "+25%", label: "Bookings in 60 days" },
@@ -62,4 +79,5 @@ export const flagshipProject: FlagshipProjectContent = {
   ],
   linkLabel: "See the live site",
   linkHref: "https://cleaning.angelss.co",
+  licenseLabel: "I want this platform with my brand",
 };

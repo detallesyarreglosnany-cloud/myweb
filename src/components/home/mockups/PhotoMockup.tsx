@@ -21,19 +21,13 @@ export function PhotoMockup({
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`relative overflow-hidden rounded-[10px] border border-line ${aspectClassName}`}
     >
-      <motion.div
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0"
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 400px"
-        />
-      </motion.div>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes="(max-width: 768px) 100vw, 560px"
+      />
     </motion.div>
   );
 }
