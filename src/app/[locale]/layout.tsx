@@ -21,6 +21,18 @@ export async function generateMetadata({
   return {
     title: siteSettings.name,
     description: hero.support,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: Object.fromEntries(locales.map((code) => [code, `/${code}`])),
+    },
+    openGraph: {
+      title: siteSettings.name,
+      description: hero.support,
+      url: `/${locale}`,
+      siteName: siteSettings.name,
+      type: "website",
+      locale: locale === "es" ? "es_ES" : "en_US",
+    },
   };
 }
 

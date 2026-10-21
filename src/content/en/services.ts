@@ -3,7 +3,7 @@ import type { Service } from "../types";
 export const services: Service[] = [
   {
     slug: "pagina-ventas-reservas",
-    category: "vender",
+    category: "web",
     name: "Sales & Booking Page",
     headline: "A page that sells and books appointments for you.",
     support:
@@ -47,10 +47,28 @@ export const services: Service[] = [
         ],
       },
     ],
+    tags: ["Booking", "Payments", "WhatsApp", "Quote tool"],
+    demo: "booking",
+    mode: "standard",
+    problem: {
+      situation: "A service business books by message: back and forth, crossed time slots, and clients who confirm and don't show up. That slot stays empty, and that's money that doesn't come back.",
+      cost: "Every no show is time you can't resell, and every minute coordinating by chat is a minute you're not serving or selling.",
+      result: "You win back the hours lost in chat and your calendar stops having ghost slots.",
+    },
+    faqs: [
+      {
+        question: "Does the quote tool cost extra?",
+        answer: "No. The instant quote tool is included from the Starter level.",
+      },
+      {
+        question: "From which level are WhatsApp reminders sent?",
+        answer: "From the Pro level, with the synced calendar and automatic reminders.",
+      },
+    ],
   },
   {
     slug: "tienda-catalogo",
-    category: "tienda",
+    category: "web",
     name: "Online Store & Catalog",
     headline: "Your catalog, done looking pretty and starting to sell.",
     support:
@@ -94,10 +112,178 @@ export const services: Service[] = [
         ],
       },
     ],
+    tags: ["Catalog", "Payments", "WhatsApp", "PWA", "CRM"],
+    demo: "store",
+    mode: "standard",
+    photo: "/mockups/tienda-catalogo.jpg",
+    problem: {
+      situation: "You have good products, but you show them in loose photos on WhatsApp or in a PDF that doesn't invite anyone to buy. The client looks and doesn't feel the urge to act.",
+      cost: "A sale that doesn't close at the moment of interest is almost never recovered.",
+      result: "You stop displaying products and start turning visits into sales on the spot.",
+    },
+    faqs: [
+      {
+        question: "How many products can I have?",
+        answer: "Up to 50 in Starter, up to 100 in Pro, and unlimited in Premium.",
+      },
+      {
+        question: "Can it be installed as an app on a phone?",
+        answer: "Yes. The Premium level includes the store as an installable mobile app (PWA).",
+      },
+      {
+        question: "Are there add ons?",
+        answer: "Yes. Social Commerce, $80, sold together with the store.",
+      },
+    ],
+  },
+  {
+    slug: "amazon-afiliados",
+    category: "web",
+    name: "Amazon Affiliates",
+    headline: "Earn commissions recommending what people already buy.",
+    support:
+      "We build your review and comparison site so your content works for you every day.",
+    ctaLabel: "I want to start",
+    benefits: [
+      "Program sign up and tracked links",
+      "Review and comparison site with basic SEO",
+      "Social content plan in Premium",
+    ],
+    fromPrice: "From $99",
+    levels: [
+      {
+        name: "Starter",
+        price: "$99",
+        includes: [
+          "Program sign up",
+          "Single niche landing page",
+          "Tracked links and affiliate disclosure",
+        ],
+      },
+      {
+        name: "Pro",
+        price: "$190",
+        includes: [
+          "Site with up to 10 review and comparison pages",
+          "Basic SEO",
+          "Tracked links",
+        ],
+      },
+      {
+        name: "Premium",
+        price: "$320",
+        includes: [
+          "Everything in Pro",
+          "15 articles",
+          "Social content plan",
+        ],
+      },
+    ],
+    tags: ["Affiliate", "SEO", "Comparisons"],
+    demo: "affiliate",
+    mode: "standard",
+    faqs: [
+      {
+        question: "Do you guarantee income?",
+        answer: "No. We don't promise income: we build the site, the tracked links, and the content so you can earn commissions.",
+      },
+    ],
+  },
+  {
+    slug: "plataformas-medida",
+    category: "apps",
+    name: "Custom Platforms",
+    headline: "You have an idea and don't know how to build it. We build it for you.",
+    support:
+      "Mini apps, apps, SaaS, or white label. Delivered installed and with full rights.",
+    ctaLabel: "Tell me my idea",
+    benefits: [
+      "Scope, installation, and timeline defined around your idea",
+      "21 days of support with adjustments and customization included",
+      "Resale license agreed in writing for each case",
+    ],
+    fromPrice: "From $600",
+    levels: [
+      {
+        name: "Custom",
+        price: "From $600",
+        includes: [
+          "Mini apps, apps, SaaS, or white label",
+          "Quoted based on your idea",
+          "21 days of support included",
+        ],
+      },
+    ],
+    tags: ["Mini apps", "Apps", "SaaS", "White label"],
+    demo: "app",
+    mode: "proposal",
+    photo: "/mockups/plataformas-medida.jpg",
+    problem: {
+      situation: "You have an idea for a platform, app, or software. You know what you want to sell and to whom, but you don't know which tools to use or how to build it.",
+      cost: "An idea that isn't built doesn't bill. Hiring a full team costs a lot, and testing loose tools ends in lost months.",
+      result: "Your idea reaches the market without you having to learn how to build it.",
+    },
+    faqs: [
+      {
+        question: "How is the price defined?",
+        answer: "It starts from $600. Scope, installation, and timeline are defined after we understand your idea.",
+      },
+      {
+        question: "What support is included?",
+        answer: "21 days of support with adjustments and customization.",
+      },
+      {
+        question: "Can I resell the platform?",
+        answer: "Yes. The resale license is agreed in writing for each case.",
+      },
+    ],
+  },
+  {
+    slug: "saas-white-label",
+    category: "apps",
+    name: "SaaS White Label",
+    headline: "Multitenant. Resell to your own clients.",
+    support:
+      "The same platform we run for Cleaning Angels, with your brand and your pricing.",
+    ctaLabel: "Become a SaaS provider",
+    benefits: [
+      "Multitenant architecture",
+      "Your brand and your pricing, resold to your own clients",
+      "Payments with Stripe Connect",
+      "Your own admin panel",
+    ],
+    fromPrice: "From $4,900",
+    levels: [
+      {
+        name: "SaaS White Label",
+        price: "From $4,900",
+        includes: [
+          "Multitenant architecture",
+          "Your brand and your pricing, resold to your own clients",
+          "Payments with Stripe Connect",
+          "Your own admin panel",
+        ],
+      },
+    ],
+    tags: ["SaaS", "Multitenant", "White label", "Stripe Connect"],
+    demo: "saas",
+    mode: "proposal",
+    featured: true,
+    photo: "/mockups/saas-white-label.jpg",
+    faqs: [
+      {
+        question: "Can I run it under my own brand?",
+        answer: "Yes. It's the same platform as Cleaning Angels, with your brand and your pricing, to resell to your own clients.",
+      },
+      {
+        question: "How do my clients pay?",
+        answer: "Payments run through Stripe Connect.",
+      },
+    ],
   },
   {
     slug: "sistema-administrativo",
-    category: "controlar",
+    category: "systems",
     name: "Custom Admin System",
     headline: "Stop running your business blind.",
     support:
@@ -139,36 +325,30 @@ export const services: Service[] = [
         ],
       },
     ],
-  },
-  {
-    slug: "plataformas-medida",
-    category: "crear",
-    name: "Custom Platforms",
-    headline: "You have an idea and don't know how to build it. We build it for you.",
-    support:
-      "Mini apps, apps, SaaS, or white label. Delivered installed and with full rights.",
-    ctaLabel: "Tell me my idea",
-    benefits: [
-      "Scope, installation, and timeline defined around your idea",
-      "21 days of support with adjustments and customization included",
-      "Resale license agreed in writing for each case",
-    ],
-    fromPrice: "From $600",
-    levels: [
+    tags: ["Profits", "Inventory", "Receivables", "Multi currency"],
+    demo: "dashboard",
+    mode: "standard",
+    featured: true,
+    photo: "/mockups/sistema-administrativo.jpg",
+    problem: {
+      situation: "You keep the books in your head, in a notebook, or in a spreadsheet updated at the end of the month. The business keeps selling and buying, but nobody knows in real time whether today made or lost money.",
+      cost: "It's not just disorder, it's money leaving without anyone seeing it: products expiring on the shelf, sales below real margin, exchange rates guessed by eye, and purchases decided on instinct.",
+      result: "You stop reconciling accounts and decide with today's data, not last month's.",
+    },
+    faqs: [
       {
-        name: "Custom",
-        price: "From $600",
-        includes: [
-          "Mini apps, apps, SaaS, or white label",
-          "Quoted based on your idea",
-          "21 days of support included",
-        ],
+        question: "What does delivery include?",
+        answer: "It's delivered installed, with the first month, coaching, tutorial videos, instructions, and data handover.",
+      },
+      {
+        question: "Can I start with a single module?",
+        answer: "Yes. The Base level includes one module of your choice, for example profits and inventory.",
       },
     ],
   },
   {
     slug: "revenue-autopilot",
-    category: "crear",
+    category: "ai",
     name: "Revenue Autopilot",
     headline: "Your entire operation, automated.",
     support:
@@ -194,83 +374,88 @@ export const services: Service[] = [
         ],
       },
     ],
-  },
-  {
-    slug: "saas-white-label",
-    category: "crear",
-    name: "SaaS White Label",
-    headline: "Multitenant. Resell to your own clients.",
-    support:
-      "The same platform we run for Cleaning Angels, with your brand and your pricing.",
-    ctaLabel: "Become a SaaS provider",
-    benefits: [
-      "Multitenant architecture",
-      "Your brand and your pricing, resold to your own clients",
-      "Payments with Stripe Connect",
-      "Your own admin panel",
-    ],
-    fromPrice: "From $4,900",
-    levels: [
+    tags: ["Booking", "Payments", "Client portal", "AI agent"],
+    demo: "revenue",
+    mode: "proposal",
+    featured: true,
+    faqs: [
       {
-        name: "SaaS White Label",
-        price: "From $4,900",
-        includes: [
-          "Multitenant architecture",
-          "Your brand and your pricing, resold to your own clients",
-          "Payments with Stripe Connect",
-          "Your own admin panel",
-        ],
+        question: "Does the AI agent cost extra?",
+        answer: "No. The WhatsApp AI agent is included in the platform.",
       },
     ],
   },
   {
-    slug: "amazon-tiendas",
-    category: "amazon",
-    name: "Amazon Stores",
-    headline: "Sell on Amazon without getting lost in the process.",
+    slug: "agentes-ia-atencion",
+    category: "ai",
+    name: "AI Customer Service Agents",
+    headline: "Your clients get an answer, even when you're offline.",
     support:
-      "We open your account, optimize your products, and set up your ads so people find you.",
-    ctaLabel: "I want to sell on Amazon",
+      "We integrate an AI agent that serves your clients inside your website or your system.",
+    ctaLabel: "I want my AI agent",
     benefits: [
-      "Seller account, verification, and payment method ready",
-      "Optimized listings with keywords",
-      "A+ Content, initial campaigns, and first month report in Premium",
+      "Integrated into your website or your system",
+      "Answers your clients' questions",
+      "Scope defined around your business",
     ],
-    fromPrice: "From $150",
+    fromPrice: "Quoted",
     levels: [
       {
-        name: "Starter, Launch",
-        price: "$150",
+        name: "Custom",
+        price: "Quoted",
         includes: [
-          "Seller account and verification",
-          "Payment method",
-          "Compliance checklist",
+          "AI agent for customer service",
+          "Integration into your website or your system",
         ],
       },
+    ],
+    tags: ["AI agent", "Customer service", "Web", "Systems"],
+    demo: "agent",
+    mode: "proposal",
+    faqs: [
       {
-        name: "Pro, Listings",
-        price: "$270",
+        question: "How much does it cost?",
+        answer: "It's quoted per project, after we understand your business and where the agent will work.",
+      },
+    ],
+  },
+  {
+    slug: "automatizacion-procesos",
+    category: "ai",
+    name: "Process Automation",
+    headline: "Let repetitive tasks run themselves.",
+    support:
+      "We automate your business processes inside your website or your systems, so your team stops doing them by hand.",
+    ctaLabel: "I want to automate",
+    benefits: [
+      "Processes done by hand today, automated",
+      "Runs on your website or your systems",
+      "Scope defined around your operation",
+    ],
+    fromPrice: "Quoted",
+    levels: [
+      {
+        name: "Custom",
+        price: "Quoted",
         includes: [
-          "Everything in Starter",
-          "5 optimized listings",
-          "Keyword research",
+          "Process automation",
+          "Integration with your website or your systems",
         ],
       },
+    ],
+    tags: ["Automation", "Processes", "Web", "Systems"],
+    demo: "automation",
+    mode: "proposal",
+    faqs: [
       {
-        name: "Premium, Sales",
-        price: "$440",
-        includes: [
-          "Everything in Pro",
-          "A+ Content on 3 products",
-          "Initial ad campaigns",
-          "First month report",
-        ],
+        question: "How much does it cost?",
+        answer: "It's quoted per project, after we understand the processes you want to automate.",
       },
     ],
   },
   {
     slug: "shopify-tiendas",
-    category: "tienda",
+    category: "commerce",
     name: "Shopify Stores",
     headline: "Your Shopify store, ready to take orders.",
     support:
@@ -312,54 +497,78 @@ export const services: Service[] = [
         ],
       },
     ],
+    tags: ["Shopify", "Payments", "Shipping", "Social media"],
+    demo: "shopify",
+    mode: "standard",
+    photo: "/mockups/shopify-tiendas.jpg",
+    faqs: [
+      {
+        question: "Who pays the Shopify subscription?",
+        answer: "The client pays the Shopify subscription.",
+      },
+    ],
   },
   {
-    slug: "amazon-afiliados",
-    category: "amazon",
-    name: "Amazon Affiliates",
-    headline: "Earn commissions recommending what people already buy.",
+    slug: "amazon-tiendas",
+    category: "commerce",
+    name: "Amazon Stores",
+    headline: "Sell on Amazon without getting lost in the process.",
     support:
-      "We build your review and comparison site so your content works for you every day.",
-    ctaLabel: "I want to start",
+      "We open your account, optimize your products, and set up your ads so people find you.",
+    ctaLabel: "I want to sell on Amazon",
     benefits: [
-      "Program sign up and tracked links",
-      "Review and comparison site with basic SEO",
-      "Social content plan in Premium",
+      "Seller account, verification, and payment method ready",
+      "Optimized listings with keywords",
+      "A+ Content, initial campaigns, and first month report in Premium",
     ],
-    fromPrice: "From $99",
+    fromPrice: "From $150",
     levels: [
       {
-        name: "Starter",
-        price: "$99",
+        name: "Starter, Launch",
+        price: "$150",
         includes: [
-          "Program sign up",
-          "Single niche landing page",
-          "Tracked links and affiliate disclosure",
+          "Seller account and verification",
+          "Payment method",
+          "Compliance checklist",
         ],
       },
       {
-        name: "Pro",
-        price: "$190",
+        name: "Pro, Listings",
+        price: "$270",
         includes: [
-          "Site with up to 10 review and comparison pages",
-          "Basic SEO",
-          "Tracked links",
+          "Everything in Starter",
+          "5 optimized listings",
+          "Keyword research",
         ],
       },
       {
-        name: "Premium",
-        price: "$320",
+        name: "Premium, Sales",
+        price: "$440",
         includes: [
           "Everything in Pro",
-          "15 articles",
-          "Social content plan",
+          "A+ Content on 3 products",
+          "Initial ad campaigns",
+          "First month report",
         ],
+      },
+    ],
+    tags: ["Amazon", "Listings", "Ads"],
+    demo: "amazon",
+    mode: "standard",
+    faqs: [
+      {
+        question: "Is advertising included?",
+        answer: "No. The client pays the Amazon ad spend separately.",
+      },
+      {
+        question: "Which countries can I sell from?",
+        answer: "It's offered to sellers from any country, subject to Amazon's rules.",
       },
     ],
   },
   {
     slug: "identidad-marca",
-    category: "marca-contenido",
+    category: "brand",
     name: "Brand Identity",
     headline: "Before selling more, make it look worth buying from you.",
     support:
@@ -387,10 +596,24 @@ export const services: Service[] = [
         ],
       },
     ],
+    tags: ["Logo", "Visual system", "Templates"],
+    demo: "brand",
+    mode: "standard",
+    problem: {
+      situation: "Many small businesses start with a logo made in a rush, with no consistent visual identity and no social media templates.",
+      cost: "A brand that doesn't look professional creates distrust before the client tries the product.",
+      result: "You make a professional first impression and you're ready for the next step.",
+    },
+    faqs: [
+      {
+        question: "What's the difference between Basic and Complete?",
+        answer: "Basic includes logo, colors, and typography. Complete adds the full visual system and social media templates.",
+      },
+    ],
   },
   {
     slug: "contenido-redes",
-    category: "marca-contenido",
+    category: "brand",
     name: "Content & Social",
     headline: "Professional level content, published on time.",
     support:
@@ -414,10 +637,19 @@ export const services: Service[] = [
         includes: ["Calendar and ongoing publishing"],
       },
     ],
+    tags: ["Content", "Social media", "AI"],
+    demo: "content",
+    mode: "standard",
+    faqs: [
+      {
+        question: "How is it priced?",
+        answer: "Content is priced per piece, from $35. Social media management is agreed case by case.",
+      },
+    ],
   },
   {
     slug: "asesoria-mentoria",
-    category: "acompanamiento",
+    category: "brand",
     name: "Coaching & Mentoring",
     headline: "A clear plan for your business and someone by your side to execute it.",
     support: "Individual or group sessions, with weekly follow up.",
@@ -440,10 +672,20 @@ export const services: Service[] = [
         includes: ["14 weeks", "Groups of 8 people"],
       },
     ],
+    tags: ["Strategy", "Roadmap", "Follow up"],
+    demo: "roadmap",
+    mode: "standard",
+    photo: "/mockups/asesoria-mentoria.jpg",
+    faqs: [
+      {
+        question: "How long does it last?",
+        answer: "Individual lasts 31 days with weekly follow up. Group runs 14 weeks, with 8 people.",
+      },
+    ],
   },
   {
     slug: "auditoria-ventas",
-    category: "acompanamiento",
+    category: "brand",
     name: "Sales Audit",
     headline: "Find out what's holding your sales back.",
     support:
@@ -462,9 +704,14 @@ export const services: Service[] = [
         includes: ["Store and social media review", "Top 3 problems"],
       },
     ],
+    tags: ["Free", "Diagnosis"],
+    demo: "audit",
+    mode: "standard",
+    faqs: [
+      {
+        question: "Does it cost anything?",
+        answer: "No. It's free and no strings attached.",
+      },
+    ],
   },
-];
-
-export const complementaryServices = [
-  { name: "Social Commerce", note: "Sold alongside the store", price: "$80" },
 ];

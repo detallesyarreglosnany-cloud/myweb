@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import { MotionConfig } from "motion/react";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -11,6 +12,7 @@ const figtree = Figtree({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Daniela Silva, Estrategia Digital",
   description:
     "Soluciones digitales a tu medida: páginas de ventas, tiendas, sistemas y plataformas, entregadas instaladas.",

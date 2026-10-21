@@ -5,11 +5,22 @@ import { motion } from "motion/react";
 import { getDictionary } from "@/content";
 import type { Locale } from "@/content/types";
 import { fadeUp } from "@/lib/motion";
+import { serviceHref } from "@/lib/catalog";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Logo } from "@/components/ui/Logo";
 
 export function Footer({ locale }: { locale: Locale }) {
-  const { footer, siteSettings } = getDictionary(locale);
+  const { footer, siteSettings, services } = getDictionary(locale);
+  const columns = [
+    {
+      title: footer.solutionsTitle,
+      links: services.map((service) => ({
+        label: service.name,
+        href: serviceHref(locale, service.slug),
+      })),
+    },
+    ...footer.columns,
+  ];
 
   return (
     <motion.footer
@@ -23,7 +34,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className="col-span-2 flex flex-col gap-4 md:col-span-1">
           <Logo locale={locale} height={40} />
         </div>
-        {footer.columns.map((column) => (
+        {columns.map((column) => (
           <div key={column.title} className="flex flex-col gap-3">
             <h3 className="text-sm font-medium text-text-soft">{column.title}</h3>
             <ul className="flex flex-col gap-2">

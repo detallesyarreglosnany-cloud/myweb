@@ -7,7 +7,7 @@ import { cascade, cascadeItem, fadeUp, easeOut } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Button } from "@/components/ui/Button";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
-import { selectSolutionTab } from "@/lib/solution-select";
+import { serviceHref } from "@/lib/catalog";
 
 function FlowArrow() {
   return (
@@ -36,7 +36,7 @@ function FlowArrow() {
 }
 
 export function AboutMe() {
-  const { dictionary } = useDictionary();
+  const { dictionary, locale } = useDictionary();
   const { about } = dictionary;
 
   return (
@@ -150,10 +150,9 @@ export function AboutMe() {
                 {about.experienceIntro}
               </p>
               <Button
-                href="#soluciones"
+                href={serviceHref(locale, "saas-white-label")}
                 variant="ghost"
                 className="self-start"
-                onClick={() => selectSolutionTab("saas-white-label")}
               >
                 {about.cleaningAngelsCta}
               </Button>

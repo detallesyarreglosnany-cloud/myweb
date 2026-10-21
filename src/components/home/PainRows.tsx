@@ -5,10 +5,10 @@ import { motion } from "motion/react";
 import { useDictionary } from "@/lib/dictionary-context";
 import { fadeUp, cascade, cascadeItem } from "@/lib/motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { selectSolutionTab } from "@/lib/solution-select";
+import { serviceHref } from "@/lib/catalog";
 
 export function PainRows() {
-  const { dictionary } = useDictionary();
+  const { dictionary, locale } = useDictionary();
   const { pains } = dictionary;
 
   return (
@@ -40,8 +40,7 @@ export function PainRows() {
             className="border-b border-line first:border-t"
           >
             <Link
-              href="#soluciones"
-              onClick={() => selectSolutionTab(pain.solutionSlug)}
+              href={serviceHref(locale, pain.solutionSlug)}
               className="group flex min-h-[72px] items-center justify-between gap-6 py-5 transition-colors duration-150 hover:bg-raised"
             >
               <span className="text-[22px] leading-[1.3] text-text md:text-[28px]">

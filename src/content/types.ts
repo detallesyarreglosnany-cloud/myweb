@@ -12,18 +12,6 @@ export interface NavLink {
   href: string;
 }
 
-export interface MegaMenuServiceLink {
-  label: string;
-  promise: string;
-  href: string;
-}
-
-export interface MegaMenuCategory {
-  id: string;
-  label: string;
-  services: MegaMenuServiceLink[];
-}
-
 export interface SiteSettings {
   name: string;
   whatsappNumber: string;
@@ -40,8 +28,9 @@ export interface HeroContent {
   headlineAccent: string;
   support: string;
   primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
+  secondaryCta: { label: string; whatsappMessage: string };
   trustBadge: string;
+  layers: { sales: string; operations: string; data: string; automation: string };
 }
 
 export interface ProductFrameContent {
@@ -69,9 +58,45 @@ export interface ServiceLevel {
   includes: string[];
 }
 
+export type CatalogCategoryId =
+  | "web"
+  | "apps"
+  | "systems"
+  | "ai"
+  | "commerce"
+  | "brand";
+
+export type ServiceDemoId =
+  | "booking"
+  | "store"
+  | "shopify"
+  | "amazon"
+  | "affiliate"
+  | "dashboard"
+  | "app"
+  | "saas"
+  | "revenue"
+  | "agent"
+  | "automation"
+  | "brand"
+  | "content"
+  | "roadmap"
+  | "audit";
+
+export interface ServiceFaq {
+  question: string;
+  answer: string;
+}
+
+export interface ServiceProblem {
+  situation: string;
+  cost: string;
+  result: string;
+}
+
 export interface Service {
   slug: string;
-  category: string;
+  category: CatalogCategoryId;
   name: string;
   headline: string;
   support: string;
@@ -79,24 +104,80 @@ export interface Service {
   benefits: string[];
   fromPrice: string;
   levels: ServiceLevel[];
+  tags: string[];
+  demo: ServiceDemoId;
+  /** "proposal": desarrollo complejo, se contrata pidiendo propuesta. */
+  mode: "standard" | "proposal";
+  faqs: ServiceFaq[];
+  problem?: ServiceProblem;
+  photo?: string;
+  video?: { src: string; poster: string };
+  featured?: boolean;
   badge?: string;
 }
 
-export interface SolutionTab {
-  id: string;
-  tabLabel: string;
-  serviceSlug: string;
+export interface CatalogCategory {
+  id: CatalogCategoryId;
+  label: string;
 }
 
 export interface SolutionsSectionContent {
   eyebrow: string;
   title: string;
-  tabs: SolutionTab[];
-  viewFullService: string;
-  repeatAnimation: string;
-  showPriceLabel: string;
-  hidePriceLabel: string;
+  intro: string;
+  categories: CatalogCategory[];
   allFilterLabel: string;
+  viewSolutionLabel: string;
+  replayLabel: string;
+  sampleDataLabel: string;
+  featuredLabel: string;
+  customCta: { title: string; support: string; label: string };
+}
+
+export interface ServiceDetailContent {
+  homeLabel: string;
+  solutionsLabel: string;
+  backLabel: string;
+  problemLabel: string;
+  problemCostLabel: string;
+  problemResultLabel: string;
+  benefitsLabel: string;
+  levelsLabel: string;
+  previewLabel: string;
+  faqLabel: string;
+  ctaTitle: string;
+  ctaSupport: string;
+  proposalCtaLabel: string;
+  relatedLabel: string;
+  whatsappStandard: string;
+  whatsappProposal: string;
+}
+
+export interface ProcessStep {
+  title: string;
+  description: string;
+}
+
+export interface ProcessContent {
+  eyebrow: string;
+  title: string;
+  steps: ProcessStep[];
+}
+
+export interface AuditBandContent {
+  eyebrow: string;
+  title: string;
+  support: string;
+  ctaLabel: string;
+  whatsappMessage: string;
+}
+
+export interface ContactContent {
+  eyebrow: string;
+  title: string;
+  support: string;
+  whatsappLabel: string;
+  instagramLabel: string;
 }
 
 export interface AboutHighlight {
@@ -168,7 +249,26 @@ export interface FooterColumn {
 }
 
 export interface FooterContent {
+  solutionsTitle: string;
   columns: FooterColumn[];
   legal: string;
   languageLabel: string;
+}
+
+export interface DemoCopy {
+  booking: { reserve: string; confirmed: string; days: string[] };
+  store: { order: string; stock: string; sent: string };
+  shopify: { store: string; cart: string; pay: string };
+  amazon: { before: string; after: string; titleBefore: string; titleAfter: string; rank: string };
+  affiliate: { review: string; cta: string; commission: string };
+  dashboard: { sales: string; margin: string; alert: string };
+  app: { idea: string; installed: string };
+  saas: { tenants: string[]; admin: string };
+  revenue: { steps: string[] };
+  agent: { name: string; question: string; answer: string };
+  automation: { trigger: string; steps: string[]; done: string };
+  brand: { template: string };
+  content: { calendar: string };
+  roadmap: { milestones: string[] };
+  audit: { problems: string[] };
 }
